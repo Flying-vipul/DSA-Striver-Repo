@@ -8,11 +8,11 @@ I am solving Data Structures & Algorithms problems daily to prepare for my dream
 
 | Topic | Problems Solved | Status |
 | :--- | :---: | :---: |
-| **Arrays** | 0 / 50 | ⏳ |
-| **Binary Search** | 0 / 30 | ⏳ |
-| **Strings** | 0 / 40 | ⏳ |
-| **Linked List** | 0 / 30 | ⏳ |
-| **Recursion** | 0 / 25 | ⏳ |
+| **Arrays** | 43 / 50 | ⏳ |
+| **Binary Search** | 8 / 30 | ⏳ |
+| **Strings** | 10 / 40 | ⏳ |
+| **Linked List** | 5 / 30 | ⏳ |
+| **Recursion** | 12 / 25 | ⏳ |
 
 ## 🛠️ Tech Stack
 - **Language:** Java
