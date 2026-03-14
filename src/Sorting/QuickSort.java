@@ -1,6 +1,6 @@
 package Sorting;
 
-public class QuickSort extends BubbleSort {
+public class QuickSort {
 
     public static void swap(int[] arr, int x, int y) {
         int temp = arr[x];
@@ -53,7 +53,7 @@ public class QuickSort extends BubbleSort {
         int[] arr = {2,4,7,99,2,3,4,66,7,4,6,8,9,1,0,2};
         int n = arr.length;
         Quick(arr, 0, arr.length - 1);
-        Display(arr, n);
+
 
     }
 }
