@@ -9,9 +9,7 @@ public class SubsequencesRec {
     public static void method(int i,int[] nums, List<Integer> list,int n){
         if (i == n){
             System.out.println(list);
-            if (list.isEmpty()) {
-                System.out.println("{}");
-            }
+
             return;
         }
         list.add(nums[i]);
