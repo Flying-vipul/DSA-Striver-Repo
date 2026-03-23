@@ -11,7 +11,7 @@ I am solving Data Structures & Algorithms problems daily to prepare for my dream
 | **Arrays** | 43 / 50 | ⏳ |
 | **Binary Search** | 8 / 30 | ⏳ |
 | **Strings** | 10 / 40 | ⏳ |
-| **Linked List** | 5 / 30 | ⏳ |
+| **Linked List** | 30 / 30 | ⏳ |
 | **Recursion** | 12 / 25 | ⏳ |
 
 ## 🛠️ Tech Stack
