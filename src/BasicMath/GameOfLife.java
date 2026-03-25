@@ -24,6 +24,8 @@ public class GameOfLife {
                             }
                         }
                     }
+
+
                 }
 
                 if ((board[row][col] ==1)&&(liveNeigh<2 || liveNeigh>3) ){
