@@ -3,7 +3,7 @@ package Recursion.Backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class CombinationSum3 {
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(result, new ArrayList<>(), k, n, 1);
@@ -28,7 +28,7 @@ class Solution {
 
             currentCombo.add(i); // Choose
             backtrack(result, currentCombo, k, remain - i, i + 1); // Explore
-            currentCombo.remove(currentCombo.size() - 1); // Backtrack
+            currentCombo.removeLast(); // Backtrack
         }
     }
 }
