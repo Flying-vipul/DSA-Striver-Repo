@@ -15,10 +15,10 @@ public class BasicRecursionProblems {
         method2(n-1);
     }
 
-    public static void method3(int i, int n){
+    public static void method3(int i){
         if (i<1) return;
         System.out.println(i);
-        method3(i-1,n);
+        method3(i-1);
     }
 
     public static int method4(int n){
@@ -39,13 +39,14 @@ public class BasicRecursionProblems {
     }
 
     public static void main(String[] args) {
-//        method("Vipul",5);
-//        method2(5);
-//        method3(50,3);
-        int res = method4(3);
-        System.out.println(res);
+        method("Vipul",5);
 
-        int res2 = method5(4);
-        System.out.println(res2);
+        method2(5);
+        method3(50);
+//        int res = method4(3);
+//        System.out.println(res);
+//
+//        int res2 = method5(4);
+//        System.out.println(res2);
     }
 }
