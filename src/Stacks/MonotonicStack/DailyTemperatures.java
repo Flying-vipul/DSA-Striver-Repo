@@ -1,4 +1,4 @@
-package MonotonicStack;
+package Stacks.MonotonicStack;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -23,8 +23,8 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        int[] ans = {73,74,75,71,69,72,76,73};
-        int[] res = dailyTemperatures(ans);
+        int[] temperatures = {73,74,75,71,69,72,76,73};
+        int[] res = dailyTemperatures(temperatures);
         System.out.println(Arrays.toString(res));
     }
 }
