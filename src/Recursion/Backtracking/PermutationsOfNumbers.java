@@ -27,9 +27,13 @@ public class PermutationsOfNumbers {
             backtrack(result,currentPath,nums);
 
             currentPath.removeLast();
+
         }
     }
 
-
-
+    public static void main(String[] args) {
+        int[] nums = {3,2,1};
+        List<List<Integer>> ans = permute(nums);
+        System.out.println(ans);
+    }
 }
