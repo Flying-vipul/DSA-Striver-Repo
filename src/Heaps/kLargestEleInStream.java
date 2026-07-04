@@ -10,19 +10,29 @@ public class kLargestEleInStream {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         int n = arr.length;
-        for (int ele:arr){
-            minHeap.add(ele);
-        }
+
         ArrayList<Integer> ans = new ArrayList<>();
         int i=0;
         while (i<n){
-            if (ans.size()<k){
-                ans.add(-1);
+            minHeap.add(arr[i]);
+
+
+            if (minHeap.size()>k){
+                minHeap.remove();
             }
-            ans.add()
+
+            if (minHeap.size()<k){
+                ans.add(-1);
+            }else {
+                ans.add(minHeap.peek());
+            }
             i++;
         }
+        return ans;
+    }
 
-
+    static void main() {
+        int[] arr = {2,5,6,9,8,7};
+        System.out.println(method(arr,4));
     }
 }
