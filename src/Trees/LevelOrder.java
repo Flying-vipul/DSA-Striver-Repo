@@ -1,7 +1,5 @@
 package Trees;
 
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,35 +18,36 @@ public class LevelOrder {
             this.right=right;
         }
     }
+
     public List<List<Integer>> levelTraversal(TreeNode node){
+
+
         List<List<Integer>> ans = new ArrayList<>();
-        helper(node,ans);
-        return ans;
+        if (node == null) return ans;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(node);
+        while(!q.isEmpty()){
+            int currSize = q.size();
 
-    }
+            List<Integer> currList = new ArrayList<>();
+            for (int i=0;i<currSize;i++){
 
-    public void helper(TreeNode node , List<List<Integer>> ans){
-        if (node == null) return;
+                TreeNode currNode  = q.poll();
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(node);
-        while(!queue.isEmpty()){
-            int levelNum = queue.size();
+                assert currNode != null;
+                currList.add(currNode.val);
 
-            List<Integer> newList = new ArrayList<>();
-            for (int i=0;i<levelNum;i++){
-                TreeNode get2 = queue.poll();
-                assert get2 != null;
-                newList.add(get2.val);
-                if (get2.left != null){
-                    queue.add(get2.left);
+                if (currNode.left!=null){
+                    q.add(currNode.left);
                 }
-                if (get2.right != null){
-                    queue.add(get2.right);
+
+                if (currNode.right!=null){
+                    q.add(currNode.right);
                 }
             }
-            ans.add(newList);
-
+                ans.add(currList);
         }
+        return ans;
+
     }
 }
