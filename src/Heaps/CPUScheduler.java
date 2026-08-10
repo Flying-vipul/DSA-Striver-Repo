@@ -4,51 +4,54 @@ import java.util.*;
 
 public class CPUScheduler {
 
-     static class  newDS{
-        int remainingCount;
-        int unlockTime;
+     class newDs{
+         int unlockTime;
+         int remainingCount;
 
-        public newDS(int remainingCount,int unlockTime){
-            this.remainingCount=remainingCount;
-            this.unlockTime=unlockTime;
-        }
-    }
+         public newDs(int unlockTime, int remainingCount) {
+             this.unlockTime = unlockTime;
+             this.remainingCount = remainingCount;
+         }
+     }
 
-    public static int schedule(char[] tasks, int n){
+     public int method(int[] tasks, int n){
 
-        int[] tasksCount = new int[26];
-        for (char ele:tasks){
-            tasksCount[ele - 'A']++;
-        }
+         int[] tasksFreq = new int[26];
+         for (int ele:tasks){
+             tasksFreq[ele-'A']++;
+         }
 
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
-        for (int ele:tasksCount){
-            if (ele>0){
-                maxHeap.add(ele);
-            }
-        }
+         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+         for (int ele:tasksFreq){
+             if (ele>0){
+                 maxHeap.add(ele);
+             }
+         }
+         Queue<newDs> queue = new LinkedList<>();
 
-        Queue<newDS> queue = new LinkedList<>();
-        int time =0;
-        while(!maxHeap.isEmpty() || !queue.isEmpty()) {
-            time++;
+         int time =0;
+         while(!queue.isEmpty()|| !maxHeap.isEmpty()){
 
-            if (!maxHeap.isEmpty()){
-                int get = maxHeap.poll();
-                get--;
-                if (get>0){
-                    queue.add(new newDS(get,time+n));
-                }
-            }
+             time++;
+             if (!maxHeap.isEmpty()){
+                 int get = maxHeap.poll();
+                 get--;
+                 if (get>0){
+                     queue.add(new newDs(time+n,get));
+                 }
 
-            if (!queue.isEmpty()){
-                if (queue.peek().unlockTime == time){
-                    int get = queue.peek().remainingCount;
-                    maxHeap.add(get);
-                    queue.poll();
-                }
-            }
-        }
-        return time;
-    }
+             }
+
+             if (!queue.isEmpty()){
+                 if (queue.peek().unlockTime==time){
+                     int get = queue.peek().remainingCount;
+                     maxHeap.add(get);
+                     queue.poll();
+                 }
+             }
+         }
+
+         return time;
+     }
+
 }
