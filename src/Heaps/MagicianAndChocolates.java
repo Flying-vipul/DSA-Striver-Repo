@@ -3,6 +3,7 @@ package Heaps;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
+
 public class MagicianAndChocolates {
 
     public static int method(int[] arr,int A){
@@ -28,3 +29,4 @@ public class MagicianAndChocolates {
     }
 
 }
+
