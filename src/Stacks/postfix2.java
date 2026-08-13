@@ -37,7 +37,6 @@ public class postfix2 {
                 }
                 stack.push(c);
             }
-
         }
 
         while (!stack.isEmpty()) {
