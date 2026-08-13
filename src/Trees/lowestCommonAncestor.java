@@ -1,8 +1,11 @@
 package Trees;
 
+import com.sun.source.tree.Tree;
+
+
 public class lowestCommonAncestor {
 
-    class TreeNode {
+     class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -12,19 +15,20 @@ public class lowestCommonAncestor {
             this.right=right;
         }
     }
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
-        if(root==null||p==null||q==null){
-            return root;
-        }
+    public  TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
 
-        TreeNode left = lowestCommonAncestor(root.left,p,q);
-        TreeNode right = lowestCommonAncestor(root.right,p,q);
+       if (root == null || root==p || root==q){
+           return root;
+       }
 
-        if(left!=null && right!=null){
-            return root;
-        }
+       TreeNode left = lca(root.left,p,q);
+       TreeNode right = lca(root.right,p,q);
 
-        return (left!=null)?left:right;
+       if (left!= null && right != null){
+           return root;
+       }
+
+       return (left!=null)?left:right;
     }
 }
