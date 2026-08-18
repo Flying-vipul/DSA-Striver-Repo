@@ -24,26 +24,26 @@ public class IterativePreOrder {
         }
     }
 
+    public List<Integer> perOrder(TreeNode root){
+         List<Integer> ans = new ArrayList<>();
 
-    public static List<Integer> preorder(TreeNode root){
-        List<Integer> ans = new ArrayList<>();
+         if (root == null) return ans;
+         ArrayDeque<TreeNode> stack = new ArrayDeque<>();
 
-        if (root==null) return ans;
+         stack.push(root);
+         while (!stack.isEmpty()){
 
-        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
-        stack.push(root);
+             TreeNode get = stack.pop();
+             ans.add(get.val);
 
-        while(!stack.isEmpty()){
-            TreeNode get = stack.pop();
-            ans.add(get.val);
-            if(get.right!=null){
-                stack.push(get.right);
-            }
-            if (get.left!=null){
-                stack.push(get.left);
-            }
-        }
-        return ans;
+             if (root.right!=null){
+                 stack.push(root.right);
+             }
+             if (root.left!=null){
+                 stack.push(root.left);
+             }
+         }
+         return ans;
     }
 
 }
