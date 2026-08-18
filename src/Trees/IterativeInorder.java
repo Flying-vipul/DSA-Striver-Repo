@@ -1,5 +1,7 @@
 package Trees;
 
+import com.sun.source.tree.Tree;
+
 import java.time.temporal.Temporal;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -26,17 +28,18 @@ public class IterativeInorder {
         List<Integer> ans = new ArrayList<>();
 
         ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+
         TreeNode curr = root;
         while(curr!=null || !stack.isEmpty()){
 
-            while(curr!=null){
+            while (curr!=null){
                 stack.push(curr);
-                curr=curr.left;
+                curr = curr.left;
             }
 
-            curr = stack.pop();
+            curr = stack.poll();
             ans.add(curr.val);
-            curr = curr.right;
+            curr=curr.right;
         }
         return ans;
     }
