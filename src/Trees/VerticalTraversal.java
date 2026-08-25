@@ -59,7 +59,6 @@ public class VerticalTraversal {
                     list.getLast().add(nodes.poll());
                 }
             }
-
         }
         return list;
     }
