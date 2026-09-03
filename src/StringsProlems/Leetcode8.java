@@ -5,9 +5,9 @@ public class Leetcode8 {
     public static int method(String s){
 
         int n = s.length();
-        int sign =1;
-        int result =0;
-        int index =0;
+        int sign = 1;
+        int result = 0;
+        int index = 0;
 
         //phase 1
         while (index < n && s.charAt(index) == ' ' ){
