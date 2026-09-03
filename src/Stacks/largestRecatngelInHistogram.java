@@ -16,8 +16,7 @@ public class largestRecatngelInHistogram {
 
         for (int i=0;i<n;i++) {
             while(!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
-                 ele = stack.peek();
-                stack.pop();
+                ele = stack.pop();
                 nse = i;
                 pse = stack.isEmpty()?-1:stack.peek();
                 maxAns = Math.max(arr[ele] *(nse-pse-1),maxAns);
