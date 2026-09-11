@@ -22,11 +22,6 @@ public class PreOrder {
         List<Integer> ans = new ArrayList<>();
             helper(root,ans);
             return ans;
-    }
-
-    public void helper(TreeNode node, List<Integer> ans){
-        if (node == null){
-            return;
         }
         ans.add(node.val);
         helper(node.left,ans);
