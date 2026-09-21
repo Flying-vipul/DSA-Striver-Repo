@@ -35,6 +35,7 @@ public class NetworkDelay {
                 int nextNode = neighbour[0];
                 int weight = neighbour[1];
 
+                // relaxation step
                 if (distance[nextNode] > weight+currDist){
                     distance[nextNode] = weight+currDist;
                     pq.offer(new int[]{distance[nextNode],nextNode});
