@@ -18,13 +18,21 @@ public class PreOrder {
       }
   }
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preOrderTraversal(TreeNode root){
+
         List<Integer> ans = new ArrayList<>();
-            helper(root,ans);
+        if(root==null){
             return ans;
         }
-        ans.add(node.val);
-        helper(node.left,ans);
-        helper(node.right,ans);
+        helper(root,ans);
+        return ans;
     }
+
+    public void helper(TreeNode node,List<Integer> list){
+        if (node == null) return;
+        list.add(node.val);
+        helper(node.left,list);
+        helper(node.right,list);
+    }
+
 }
