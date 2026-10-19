@@ -14,7 +14,7 @@ public class DijkstraAlgo {
 
         int[][] effort = new int[rows][cols];
 
-        for(int[] ele: heights){
+        for(int[] ele: effort){
             Arrays.fill(ele,Integer.MAX_VALUE);
         }
 
@@ -28,9 +28,9 @@ public class DijkstraAlgo {
             int currRow = current[1];
             int currCol = current[2];
 
-            if (currRow == rows-1 && currCol == cols-1) return currEffort;
+            if (currRow == rows-1 && currCol == cols-1)  continue;
 
-            if (currEffort < effort[currRow][currCol]) return currEffort;
+            if (currEffort > effort[currRow][currCol]) return currEffort;
 
             for (int i=0 ; i<4;i++){
                 int newRow = currRow + dRow[i];
@@ -42,7 +42,7 @@ public class DijkstraAlgo {
 
                     if (newEffort < effort[newRow][newCol]) {
                         effort[newRow][newCol] = newEffort;
-                        pq.offer(new int[]{newRow, newCol, newEffort});
+                        pq.offer(new int[]{newEffort, newRow, newCol});
                     }
                 }
             }
